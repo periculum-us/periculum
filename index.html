@@ -214,20 +214,19 @@
     text-transform: uppercase;
     margin-top: 4px;
   }
-  nav.primary { display: flex; gap: 22px; align-items: center; }
-  nav.primary a {
-    font-size: 14px;
-  }
+  nav.primary { display: flex; gap: 16px; align-items: center; flex-wrap: nowrap; }
   nav.primary a {
     color: var(--char);
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     padding: 4px 0;
     border-bottom: 1.5px solid transparent;
     transition: all 0.2s ease;
     cursor: pointer;
+    white-space: nowrap;
   }
   nav.primary a:hover, nav.primary a.active {
     color: var(--green);
@@ -324,7 +323,7 @@
   .eyebrow .dot { color: var(--gold); margin: 0 8px; }
   h1.hero-h {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 72px;
     line-height: 1.05;
     color: var(--green);
@@ -352,7 +351,7 @@
   }
   h2.section-h {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 50px;
     line-height: 1.1;
     color: var(--green);
@@ -366,7 +365,7 @@
     max-width: 760px;
     margin-bottom: 64px;
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 400;
   }
   .center-text { text-align: center; }
   .center-text h2.section-h, .center-text .section-lead { margin-left: auto; margin-right: auto; }
@@ -1085,22 +1084,24 @@
   }
   .founder-block {
     display: grid;
-    grid-template-columns: minmax(0, 320px) 1fr;
+    grid-template-columns: minmax(0, 300px) 1fr;
     gap: 56px;
     align-items: start;
     margin-top: 32px;
   }
   .founder-portrait {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
+    min-height: 380px;
     aspect-ratio: 4/5;
     background-color: #3E5C3C;
     background-image: url('/images/sai-portrait.jpg');
     background-size: cover;
-    background-position: center 20%;
+    background-position: center top;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    border-radius: 2px;
   }
   /* Gradient overlay removed — the parent's background-color (#3E5C3C / sage)
      serves as the fallback if the image fails to load. Pseudo-element stacking
@@ -1127,7 +1128,7 @@
     font-size: 36px;
     color: var(--green);
     margin-bottom: 24px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .founder-bio p {
     color: var(--char);
@@ -2756,7 +2757,7 @@
     <div class="hero-content">
       <div class="eyebrow">A BOUTIQUE ADVISORY FIRM <span class="dot">·</span> AI GOVERNANCE <span class="dot">·</span> CYBERSECURITY <span class="dot">·</span> RISK</div>
       <h1 class="hero-h">Trust at scale.</h1>
-      <p class="hero-sub" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--green);max-width:820px;margin:0 auto 20px;">Helping boards and growth-stage organizations govern AI, reduce risk, and build trust at scale.</p>
+      <p class="hero-sub" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--green);max-width:820px;margin:0 auto 20px;">Helping boards, CEOs, and growth-stage leaders govern AI, strengthen cyber resilience, and turn risk into trust.</p>
       <p class="hero-sub" style="max-width:760px;">A global practice rooted in Plano, Texas — with a dedicated <a data-page="impact" style="color:var(--green);font-weight:600;border-bottom:1px solid var(--gold);text-decoration:none;cursor:pointer;padding-bottom:1px;">Impact Practice</a> for nonprofits, women- and minority-owned firms, and emerging founders.</p>
       <div class="hero-ctas">
         <a class="cta-button" data-page="schedule">Schedule a Briefing</a>
@@ -2997,7 +2998,7 @@
 <section class="sixa">
     <div class="container center-text">
       <div class="section-eyebrow">HOW WE WORK</div>
-      <h2 class="section-h">The 6A Compass.</h2>
+      <h2 class="section-h">The 6A Compass&#8482;.</h2>
       <p class="section-lead">Six phases. One language. Built to compound long after the engagement ends.</p>
 
       <!-- Modern compass-rose visual + phase grid -->
@@ -3141,8 +3142,8 @@
   <section>
     <div class="container center-text">
       <div class="section-eyebrow">CORE SERVICES</div>
-      <h2 class="section-h">Five services. One approach.</h2>
-      <p class="section-lead">Hire one. Compose several. Always delivered personally.</p>
+      <h2 class="section-h">Five commercial services, plus one Impact Practice.</h2>
+      <p class="section-lead">Start with one. Combine several. Always delivered personally by the principal adviser.</p>
 
       <div class="services-grid" style="margin-top:40px;">
         <div class="service-card">
@@ -3224,7 +3225,7 @@
         <div style="text-align:left;padding:32px 24px;background:white;border-top:3px solid var(--gold);">
           <div style="font-family:'Cormorant Garamond',serif;font-size:54px;color:var(--green);font-weight:600;line-height:1;margin-bottom:14px;">59%</div>
           <h4 style="font-family:'Cormorant Garamond',serif;color:var(--green);font-size:18px;font-weight:600;line-height:1.2;margin-bottom:10px;">Risk &amp; incidents reduced</h4>
-          <p style="font-size:13px;color:var(--char);line-height:1.5;">Integrated risk + second-line oversight at hyperscaler scale.</p>
+          <p style="font-size:13px;color:var(--char);line-height:1.5;">Integrated risk + second-line oversight at enterprise scale.</p>
         </div>
         <div style="text-align:left;padding:32px 24px;background:white;border-top:3px solid var(--gold);">
           <div style="font-family:'Cormorant Garamond',serif;font-size:54px;color:var(--green);font-weight:600;line-height:1;margin-bottom:14px;">$20M+</div>
@@ -3242,6 +3243,7 @@
           <p style="font-size:13px;color:var(--char);line-height:1.5;">Cybersecurity · AI governance · sustainability.</p>
         </div>
       </div>
+      <p style="font-size:11px;color:var(--grey);text-align:center;margin-top:18px;font-style:italic;line-height:1.5;">Representative outcomes from prior leadership and advisory work. Details anonymised due to confidentiality.</p>
 
       <!-- Short-video moment (Gen-Z scannable). Replace src with a 30-60s clip. -->
       <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center;">
@@ -3252,12 +3254,11 @@
           <a href="https://youtu.be/M36kur0Hju0" target="_blank" rel="noopener" style="display:inline-block;margin-top:16px;color:var(--green);font-size:14px;font-weight:600;letter-spacing:0.04em;border-bottom:1px solid var(--gold);padding-bottom:2px;text-decoration:none;">Watch on YouTube →</a>
         </div>
         <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#3E5C3C 0%,#2A332A 100%);overflow:hidden;border-radius:2px;">
-          <!-- Replace this block with: <video src="/videos/sai-intro.mp4" controls poster="images/sai-video-poster.jpg" style="width:100%;height:100%;object-fit:cover;"></video> -->
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;">
             <div style="width:64px;height:64px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
               <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid var(--green);margin-left:5px;"></div>
             </div>
-            <div style="color:rgba(245,243,238,0.7);font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.04em;text-align:center;padding:0 24px;">Add 30–60s clip → <code style="background:rgba(245,243,238,0.12);padding:2px 6px;border-radius:2px;">videos/sai-intro.mp4</code></div>
+            <div style="color:rgba(245,243,238,0.7);font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.04em;text-align:center;padding:0 24px;">Video coming soon.</div>
           </div>
         </div>
       </div>
@@ -3283,7 +3284,7 @@
           <div class="why-num">02</div>
           <div class="why-bar"></div>
           <h4 class="why-title">Built it. Ran it. Now advising on it.</h4>
-          <p class="why-desc">Risk programs at SIFI and hyperscaler scale. The work has been done.</p>
+          <p class="why-desc">Risk programs at SIFI and enterprise scale. The work has been done.</p>
         </div>
         <div class="why-card">
           <div class="why-num">03</div>
@@ -3345,8 +3346,8 @@
   <section style="background:#FAFAF8;border-top:1px solid #EDE9DF;border-bottom:1px solid #EDE9DF;">
     <div class="container center-text">
       <div class="section-eyebrow">HOW ENGAGEMENT STARTS</div>
-      <h2 class="section-h">From self-check to delivery, in five clean steps.</h2>
-      <p class="section-lead">There is no surprise step. There is no consultative theater. The path is the path.</p>
+      <h2 class="section-h">From self-check to delivery, in five steps.</h2>
+      <p class="section-lead">No hidden steps. No consulting theatre. Just a clear path from readiness to action.</p>
 
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px;">
 
@@ -3398,7 +3399,7 @@
       <a class="cta-button gold" data-page="readiness" role="button" tabindex="0">Start the Readiness Check &nbsp;→</a>
     </div>
     <p style="margin-top:18px;font-size:12px;color:rgba(245,243,238,0.7);letter-spacing:0.04em;">
-      Step 1: Answer 18 quick questions &nbsp;·&nbsp;
+      Step 1: Answer 18 direct questions &nbsp;·&nbsp;
       Step 2: See your 6A scores instantly &nbsp;·&nbsp;
       Step 3: Get the PDF report
     </p>
@@ -3428,7 +3429,7 @@
   <section class="about-section">
     <div class="container center-text">
       <div class="section-eyebrow">OUR APPROACH</div>
-      <h2 class="section-h" style="font-size:40px;">Built to sharpen judgment — not produce reports.</h2>
+      <h2 class="section-h" style="font-size:40px;">Built to sharpen judgement — not produce reports.</h2>
       <p style="font-size:18px;color:var(--char);line-height:1.7;max-width:820px;margin-left:auto;margin-right:auto;">
         Every engagement follows the 6A Compass — a continuous, six-phase rhythm. Align leadership on priorities and exposure. Assess risk across domains, not silos. Architect scalable governance and control structures. Activate policies and controls within day-to-day work. Assure outcomes through validation and audit readiness. Adapt as technology, regulation, and business conditions evolve.
       </p>
@@ -3448,13 +3449,15 @@
         </div>
         <div class="founder-bio">
           <h3>Founder &amp; Principal Advisor, Periculum LLC</h3>
-          <p>Sailakshmi "Sai" Santhanakrishnan is a passionate advocate at the crossroads of <strong>cybersecurity, Environmental Social and Governance (ESG) principles, and AI ethics</strong>. Her mission is deeply personal — to blend sustainability with innovation and shape a digital world that's secure and welcoming for everyone.</p>
+          <p>Sailakshmi "Sai" Santhanakrishnan is a passionate advocate at the crossroads of <strong>cybersecurity, Environmental Social and Governance (ESG) principles, and AI ethics</strong>. Her mission is deeply personal — to blend sustainability with innovation and shape a digital world that is secure and welcoming for everyone.</p>
           <p>She serves as a <strong>Board Member of Empowering Women as Leaders (EWL)</strong> and is the proud <strong>co-founder of WeInspire.Guru</strong>, a mentorship platform for the next generation. Her work extends beyond advocacy — she is dedicated to enriching the technology landscape by promoting ethical AI use and equipping women and emerging leaders with the tools they need to succeed.</p>
           <p>Her co-authored book, <em>The CISO Mentor: Pragmatic Advice for Emerging Risk Management Leaders</em>, reflects her commitment to guiding the next wave of risk practitioners with ethical leadership and strategic foresight. She also serves as a Board Member of Empowering Women as Leaders (EWL) and as an advisor to <a href="https://research.unt.edu/aeri/index.html" target="_blank" rel="noopener" style="color:var(--green);border-bottom:1px solid var(--gold);text-decoration:none;">UNT's Advanced Environmental Research Institute (AERI)</a>. Across every engagement, Sai's conviction is simple: risk, when understood clearly, becomes a lever for better decisions — not a constraint on progress. And mentorship is not separate from the work. It is the work.</p>
           <div class="credibility-grid">
             <div class="cred-pill">Senior leadership and advisory at Amazon, BNY Mellon, and The Hartford</div>
             <div class="cred-pill">Fortune 50 and 100 clients across seven industries</div>
-            <div class="cred-pill">Head of ESG &amp; Sustainability, Amazech  ·  Co-founder, WeInspire.Guru</div>
+            <div class="cred-pill">Founder &amp; Principal Adviser, Periculum LLC  ·  Boutique AI governance and risk advisory</div>
+            <div class="cred-pill">Co-founder, WeInspire.Guru  ·  Mentorship platform for women in technology and emerging leaders</div>
+            <div class="cred-pill">Head of ESG &amp; Sustainability, Amazech</div>
             <div class="cred-pill">Board Member, Empowering Women as Leaders (EWL)  ·  Advisor, UNT Advanced Environmental Research Institute (AERI)</div>
             <div class="cred-pill">Master's in CIS, Boston University  ·  Executive MBA, Quantic School of Business and Technology  ·  Cambridge ESG</div>
             <div class="cred-pill">ISO 42001 · CISM · CRISC · CDPSE · ISO 27001</div>
@@ -3476,12 +3479,12 @@
       <div style="text-align:center;margin-bottom:32px;">
         <div class="section-eyebrow">OPERATOR HERITAGE</div>
         <h2 class="section-h" style="font-size:28px;">Where the work was built.</h2>
-        <p style="font-size:14px;color:var(--grey);margin-top:10px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.55;">Two decades operating inside the room — at SIFI, Fortune 50/100, and hyperscaler-platform scale.</p>
+        <p style="font-size:14px;color:var(--grey);margin-top:10px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.55;">Two decades operating inside the room — at SIFI, Fortune 50/100, and enterprise-platform scale.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;max-width:1080px;margin:0 auto;">
         <div style="border:1px solid var(--line);padding:18px 16px;text-align:center;background:#FAFAF8;">
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--green);font-weight:600;line-height:1.15;">Amazon</div>
-          <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;">Hyperscaler-platform scale</div>
+          <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:6px;">Enterprise-platform scale</div>
         </div>
         <div style="border:1px solid var(--line);padding:18px 16px;text-align:center;background:#FAFAF8;">
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--green);font-weight:600;line-height:1.15;">BNY Mellon</div>
@@ -3567,11 +3570,11 @@
 
       <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:64px;margin-top:40px;align-items:start;">
         <div style="font-size:16.5px;color:var(--char);line-height:1.7;">
-          <p style="margin-bottom:18px;"><strong>Sailakshmi "Sai" Santhanakrishnan</strong> began her journey the way many in her community did — with the dream of becoming a doctor. When that path came with a price on her principles, she chose a different one. <em>"I chose to follow my own compass. That one decision shaped everything that came after."</em></p>
-          <p style="margin-bottom:18px;">She pivoted to computer science — at a time when it was unfamiliar in her community — and built from scratch. No prestigious university name. No influential network. Just the courage to learn, solve, and ship. Over the years she led multicultural teams across continents, developed software for international clients, and grew her appreciation for cultural awareness as a vital professional skill.</p>
-          <p style="margin-bottom:18px;">As regulations around information systems intensified, Sai stepped into the intersection of technology, compliance, and risk — contributing to early governance, risk, and compliance platforms that later became industry standards. Her career took her through senior leadership and advisory roles at <strong>Fortune 100 cloud platforms, global financial institutions, and a Fortune 500 insurance carrier</strong>, and into consulting engagements serving <strong>Fortune 50 and 100 clients</strong> across financial services, healthcare, education, oil and gas, telecom, entertainment, and non-profits.</p>
-          <p style="margin-bottom:18px;">At the peak of her career — leading risk, compliance, and privacy for a major consumer AI platform — she made the courageous decision to step away when her values and the work she was being asked to do no longer aligned. <em>"Success sometimes means knowing when to walk away. It's about staying grounded in your purpose."</em></p>
-          <p style="margin-bottom:0;">That decision opened the path she now walks. More than a decade ago, she founded <strong>Periculum</strong> and co-founded the mentorship platform <strong>WeInspire.Guru</strong> — two long-standing commitments that still anchor her work today. WeInspire.Guru is her consistent forum for giving back to the next generation; Periculum is her path to keep venturing into uncharted territory — bringing sustainability and ESG credentials from Cambridge, mentoring young professionals in cybersecurity, supporting women in technology, and partnering with civic and educational institutions on sustainability and AI literacy.</p>
+          <p style="margin-bottom:18px;"><strong>Sailakshmi "Sai" Santhanakrishnan</strong> began her journey with the dream of becoming a doctor. But when the path forward required choices that conflicted with her values, she made the first defining decision of her life. She stepped away and charted a new course in computer science — a choice she reflects on simply: <em>"I chose to follow my own compass. That one decision shaped everything that came after."</em></p>
+          <p style="margin-bottom:18px;">She went on to build her career from the ground up, without pedigree, privilege, or an inherited network. Along the way, she led multicultural teams across continents and learned early that cultural fluency is as essential as technical expertise.</p>
+          <p style="margin-bottom:18px;">As global regulatory pressures around information systems intensified, Sai moved into governance, risk, and compliance, contributing to early platforms that helped shape the direction of the industry. She later served in senior leadership roles across <strong>top cloud providers and multinational financial institutions</strong>, complemented by consulting engagements with <strong>Fortune 50 and 100 organisations</strong> in finance, healthcare, energy, and mission-driven sectors.</p>
+          <p style="margin-bottom:18px;">At the height of her career — leading risk, compliance, and privacy for a major consumer AI platform — she faced another pivotal moment. When the work she was being asked to do no longer aligned with her values, she chose integrity over title and walked away. <em>"Success sometimes means knowing when to walk away. It's about staying grounded in your purpose."</em></p>
+          <p style="margin-bottom:0;">That choice opened the path she now walks. For more than a decade, two commitments have anchored her work: <strong>Periculum</strong>, her advisory practice dedicated to principled risk leadership, and <strong>WeInspire.Guru</strong>, the mentorship platform she co-founded to support the next generation of technology leaders. Both remain active, purposeful, and central to her mission.</p>
         </div>
 
         <!-- Values pull-quote -->
@@ -3624,8 +3627,8 @@
   <section class="about-hero">
     <div class="container">
       <div class="section-eyebrow">SERVICES</div>
-      <h2 class="section-h">Five services. One trusted approach.</h2>
-      <p class="section-lead">Hire one. Compose several. Every service runs on the 6A Compass — delivered personally.</p>
+      <h2 class="section-h">Five commercial services. One trusted approach.</h2>
+      <p class="section-lead">Start with one, combine several, and work directly with the principal adviser. Every service runs on the 6A Compass&#8482;.</p>
     </div>
   </section>
 
@@ -3679,7 +3682,7 @@
             <div class="detail-label">Best for</div>
             <p class="detail-text">Series B+ companies, scaling platforms, and PE/portfolio operators between full-time executives.</p>
             <div class="detail-label" style="margin-top:18px;">Typical engagement</div>
-            <p class="detail-text">3–12 months · 2–4 days/month · 6A phases <strong>Align → Architect → Activate → Assure</strong></p>
+            <p class="detail-text">3–12 months · 2–4 days/month<br>6A phases <strong>Align → Architect →<br>Activate → Assure</strong></p>
           </div>
         </div>
         <a class="service-cta" data-page="schedule" data-context="fractional">Discuss a Fractional Engagement →</a>
@@ -3689,7 +3692,7 @@
         <div class="service-detail-head">
           <div class="num">SERVICE 03</div>
           <h3>Program Build &amp; Audit Readiness</h3>
-          <p class="service-summary">Hands-on build of AI governance, GRC, and audit-readiness programs — designed, run, and handed over to your team.</p>
+          <p class="service-summary">Hands-on build of AI governance, GRC, and audit-readiness programs — designed, executed, and handed over to your team.</p>
         </div>
         <div class="service-detail-grid">
           <div>
@@ -4030,7 +4033,7 @@
         </div>
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#F5F3EE;line-height:1.2;">Texas TRAIGA</div>
-          <div style="font-size:11px;color:rgba(245,243,238,0.7);margin-top:4px;line-height:1.5;">State-level AI governance compliance window.</div>
+          <div style="font-size:11px;color:rgba(245,243,238,0.7);margin-top:4px;line-height:1.5;">Active since January 2026. Scope narrowed from earlier drafts.</div>
         </div>
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#F5F3EE;line-height:1.2;">SEC Cyber 8-K</div>
@@ -4041,8 +4044,8 @@
           <div style="font-size:11px;color:rgba(245,243,238,0.7);margin-top:4px;line-height:1.5;">First-mover certifications now closing.</div>
         </div>
         <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#F5F3EE;line-height:1.2;">CSRD &amp; SEC Climate</div>
-          <div style="font-size:11px;color:rgba(245,243,238,0.7);margin-top:4px;line-height:1.5;">Mandatory sustainability disclosure rolling out.</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#F5F3EE;line-height:1.2;">CSRD &amp; Global Sustainability</div>
+          <div style="font-size:11px;color:rgba(245,243,238,0.7);margin-top:4px;line-height:1.5;">Global disclosure active; U.S. SEC climate rule under rescission.</div>
         </div>
       </div>
     </div>
@@ -4125,7 +4128,7 @@
     <div class="container">
       <div class="section-eyebrow">READINESS CHECK  ·  6A COMPASS</div>
       <h2 class="section-h">AI Governance &amp; Integrated Risk Readiness.</h2>
-      <p class="section-lead">Built on the 6A Compass. Eighteen questions, six minutes. Returns per-phase scores, three next actions, and a branded PDF.</p>
+      <p class="section-lead">Eighteen questions. Six minutes. A practical 6A scorecard your leadership team can use to identify gaps before scoping an engagement.</p>
     </div>
   </section>
 
@@ -4160,7 +4163,7 @@
           <a class="cta-button" id="start-readiness" role="button" tabindex="0">Begin the Check &nbsp;→</a>
         </div>
 
-        <p class="readiness-disclosure">Your responses stay in your browser. We do not store, transmit, or analyze your answers unless you choose to share your email at the end for an optional follow-up briefing. This check is directional — for a tailored assessment, schedule a briefing.</p>
+        <p class="readiness-disclosure">Your responses stay in your browser. We do not store, transmit, or analyse your answers unless you choose to share your email at the end for an optional follow-up briefing. This check is directional — for a tailored assessment, schedule a briefing.</p>
       </div>
 
       <!-- 2. Quiz panel -->
@@ -4239,7 +4242,7 @@
           </div>
         </div>
 
-        <p class="readiness-disclosure" style="margin-top:32px;">This check is a directional snapshot, not a formal assessment. The 6A Compass scoring approach reflects practitioner experience across SIFI-scale and hyperscaler-platform programs but is not a substitute for a tailored advisory engagement.</p>
+        <p class="readiness-disclosure" style="margin-top:32px;">This check is a directional snapshot, not a formal assessment. The 6A Compass scoring approach reflects practitioner experience across SIFI-scale and enterprise-platform programs but is not a substitute for a tailored advisory engagement.</p>
       </div>
 
     </div>
@@ -4489,7 +4492,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -4865,7 +4868,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -5217,7 +5220,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -5552,7 +5555,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -5835,7 +5838,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -6098,7 +6101,7 @@
         <div>
           <div class="author-bio-eyebrow">ABOUT THE AUTHOR</div>
           <h4>Sailakshmi "Sai" Santhanakrishnan</h4>
-          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at hyperscaler cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
+          <p>Founder of Periculum LLC, a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Two decades building and running risk programs at SIFI scale and at enterprise cloud-platform scale. Credentialed across four risk domains — ISO 42001 · CISM · CRISC · CDPSE · ISO 27001 · Cambridge ESG.</p>
           <a data-page="about">Read Sai's full bio &nbsp;→</a>
         </div>
       </div>
@@ -6501,7 +6504,7 @@
         <div>
           <div style="aspect-ratio:3/2;background-color:#3E5C3C;background-image:url('/images/sai-impact-mentorship.jpg');background-size:cover;background-position:center top;position:relative;overflow:hidden;">
             <div style="position:absolute;inset:0;display:flex;align-items:flex-end;background:linear-gradient(180deg,transparent 60%,rgba(42,51,42,0.7) 100%);padding:24px;">
-              <div style="color:rgba(245,243,238,0.85);font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;">Photo coming soon.</div>
+              <div style="color:rgba(245,243,238,0.85);font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;">Mentorship in action.</div>
             </div>
           </div>
           <p style="margin-top:14px;font-size:14px;color:var(--char);line-height:1.6;"><strong style="color:var(--green);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;">Mentorship in action.</strong> A moment from the mentorship work Sai has carried forward through WeInspire.Guru, EWL, and AERI.</p>
@@ -6509,7 +6512,7 @@
         <div>
           <div style="aspect-ratio:3/2;background-color:#3E5C3C;background-image:url('/images/sai-impact-community.jpg');background-size:cover;background-position:center top;position:relative;overflow:hidden;">
             <div style="position:absolute;inset:0;display:flex;align-items:flex-end;background:linear-gradient(180deg,transparent 60%,rgba(42,51,42,0.7) 100%);padding:24px;">
-              <div style="color:rgba(245,243,238,0.85);font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;">Photo coming soon.</div>
+              <div style="color:rgba(245,243,238,0.85);font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;">Community work, named.</div>
             </div>
           </div>
           <p style="margin-top:14px;font-size:14px;color:var(--char);line-height:1.6;"><strong style="color:var(--green);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;">Community work, named.</strong> EWL board meetings, AERI advisory, women-in-cybersecurity events, ESG summit appearances — the visible thread of a decade of giving the time before it became a service line.</p>
@@ -6523,33 +6526,11 @@
     <div class="container center-text">
       <div class="section-eyebrow">REFERENCES</div>
       <h2 class="section-h">Voices from the work.</h2>
-      <p class="section-lead">Below are reference statements — currently drafted placeholders, to be replaced as real quotes are received from mentors, peers, and past pro bono recipients. Each is structured so it can be substituted with a signed quote and attribution.</p>
+      <p class="section-lead">Reference statements will be published with permission as the Impact Practice formalises its 2026 cohort. If you are a mentor, colleague, or past pro bono recipient and would like to contribute, email <a href="mailto:connect@periculum.us" style="color:var(--green);border-bottom:1px solid var(--gold);text-decoration:none;">connect@periculum.us</a>.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px;">
-
-        <div style="background:white;border:1px solid var(--line);border-left:3px solid var(--gold);padding:32px 36px;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--green);line-height:1.55;margin-bottom:20px;">"Sai brings boardroom rigor to community impact, and community values to the boardroom. Both worlds benefit from her insistence that one cannot be done without the other."</p>
-          <div style="font-size:12px;letter-spacing:0.14em;color:var(--green);font-weight:700;text-transform:uppercase;border-top:1px solid var(--gold);padding-top:14px;">EWL Mentor / Board Colleague</div>
-                  </div>
-
-        <div style="background:white;border:1px solid var(--line);border-left:3px solid var(--gold);padding:32px 36px;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--green);line-height:1.55;margin-bottom:20px;">"What's distinctive about working with Sai isn't only her depth — it's her willingness to apply the same discipline she brings to Fortune 100 risk programs to the work of helping a nonprofit founder find their footing. The combination is rare."</p>
-          <div style="font-size:12px;letter-spacing:0.14em;color:var(--green);font-weight:700;text-transform:uppercase;border-top:1px solid var(--gold);padding-top:14px;">AERI Advisory / Academic Partner</div>
-                  </div>
-
-        <div style="background:white;border:1px solid var(--line);border-left:3px solid var(--gold);padding:32px 36px;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--green);line-height:1.55;margin-bottom:20px;">"Sai mentored me through a transition I wasn't sure I could survive. What I noticed wasn't her credentials — it was that she listens, she asks the question I would not have asked myself, and she holds me to the answer."</p>
-          <div style="font-size:12px;letter-spacing:0.14em;color:var(--green);font-weight:700;text-transform:uppercase;border-top:1px solid var(--gold);padding-top:14px;">Mentorship Recipient</div>
-                  </div>
-
-        <div style="background:white;border:1px solid var(--line);border-left:3px solid var(--gold);padding:32px 36px;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--green);line-height:1.55;margin-bottom:20px;">"The work Sai has carried forward through WeInspire.Guru and her board service has compounded — not for her benefit, but for the leaders she's quietly enabled. The Impact Practice formalizes what she's been doing without a service line for a decade."</p>
-          <div style="font-size:12px;letter-spacing:0.14em;color:var(--green);font-weight:700;text-transform:uppercase;border-top:1px solid var(--gold);padding-top:14px;">WeInspire.Guru Co-founder / Colleague</div>
-                  </div>
-
+      <div style="margin-top:32px;padding:28px 36px;background:white;border:1px solid var(--line);border-left:3px solid var(--gold);max-width:680px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--green);line-height:1.6;">References available upon request. Signed statements will be published here with permission as the Impact Practice formalises its 2026 cohort.</p>
       </div>
-
-      <p style="margin-top:36px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--green);font-size:16px;line-height:1.5;max-width:760px;">Are you a mentor, colleague, or recipient of past pro bono work? Email <a href="mailto:connect@periculum.us" style="color:var(--green);border-bottom:1px solid var(--gold);text-decoration:none;">connect@periculum.us</a> to share a reference statement for publication.</p>
     </div>
   </section>
 
@@ -6819,9 +6800,9 @@
 
       <div style="display:flex;justify-content:center;margin-top:36px;">
         <div style="background:white;border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 40px;max-width:560px;text-align:center;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--gold);font-weight:600;line-height:1;margin-bottom:14px;letter-spacing:0.04em;">TBD</div>
-          <h4 style="font-family:'Cormorant Garamond',serif;color:var(--green);font-size:22px;font-weight:600;line-height:1.3;margin-bottom:14px;">Engagements being scheduled.</h4>
-          <p style="font-size:14px;color:var(--char);line-height:1.6;margin-bottom:22px;">Confirmed panels, board briefings, and capability sessions will appear here as the 2026 calendar comes together. Topics span AI governance, integrated risk, audit readiness, Texas TRAIGA, EU AI Act, and agentic AI.</p>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:600;line-height:1.2;margin-bottom:14px;letter-spacing:0.02em;">2026 Speaking Engagements</div>
+          <h4 style="font-family:'Cormorant Garamond',serif;color:var(--green);font-size:22px;font-weight:600;line-height:1.3;margin-bottom:14px;">Being finalised.</h4>
+          <p style="font-size:14px;color:var(--char);line-height:1.6;margin-bottom:22px;">2026 speaking engagements are being finalised. Topics include AI governance, integrated risk, audit readiness, Texas TRAIGA, the EU AI Act, and agentic AI. Confirmed events will be listed here as the calendar is confirmed.</p>
           <a data-page="contact" class="cta-button outline">Invite Sai to Your Event →</a>
         </div>
       </div>
@@ -6843,7 +6824,7 @@
       <div class="section-eyebrow">CONTACT</div>
       <h2 class="section-h">Let's start the conversation.</h2>
       <p class="section-lead">Tell me about your environment, your timeline, and what you'd like to walk out with. Typical response: one business day.</p>
-      <p class="section-tagline" style="font-size:18px;margin-top:18px;">Not ready to book? Just say hello — no obligation. Conversation is the work.</p>
+      <p class="section-tagline" style="font-size:18px;margin-top:18px;">Not ready to book? Just say hello — no obligation. The first conversation is where the work becomes clear.</p>
     </div>
   </section>
 
