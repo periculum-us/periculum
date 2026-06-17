@@ -1,0 +1,13 @@
+# RFC 9116 — Periculum LLC Security Contact
+# Last updated: June 2026
+
+Contact: mailto:connect@periculum.us
+Contact: https://periculum.us/contact
+Expires: 2027-06-30T23:59:00.000Z
+Preferred-Languages: en
+Canonical: https://periculum.us/.well-known/security.txt
+Policy: https://periculum.us/llms.txt
+
+# We appreciate responsible disclosure. Please contact connect@periculum.us
+# with security findings or vulnerability reports. We will acknowledge
+# receipt within 5 business days.

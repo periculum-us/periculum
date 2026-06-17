@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periculum</title>
+  <script>
+    // GitHub Pages SPA redirect — Periculum LLC
+    // GitHub Pages serves this 404.html whenever a clean URL (e.g. /about) is
+    // requested directly. We encode the path as a query param and bounce to
+    // index.html, which reads it back and restores the correct URL silently.
+    (function () {
+      var l = window.location;
+      var path = l.pathname.slice(1); // strip leading /
+      if (path) {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/?p=' + encodeURIComponent(path) +
+          (l.search ? '&' + l.search.slice(1) : '') +
+          l.hash
+        );
+      } else {
+        // Already at root — just go home
+        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
+      }
+    })();
+  </script>
+</head>
+<body></body>
+</html>

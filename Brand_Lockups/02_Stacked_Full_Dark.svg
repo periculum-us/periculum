@@ -1,0 +1,13 @@
+<svg viewBox="0 0 600 580" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="580" fill="#2A332A"/>
+<g transform="translate(300, 245)">
+<g>
+<text x="0" y="0" font-family="'Cormorant Garamond', Georgia, serif" font-size="155" font-weight="500" fill="#F5F3EE">P</text>
+<line x1="-45" y1="0" x2="40" y2="-85" stroke="#C2A96A" stroke-width="7" stroke-linecap="round"/>
+<circle cx="40" cy="-85" r="8" fill="#C2A96A"/>
+</g>
+</g>
+<text x="300" y="350" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="62" font-weight="500" fill="#F5F3EE" letter-spacing="0.02em">Periculum</text>
+<text x="300" y="395" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" letter-spacing="4" font-weight="700" fill="#C2A96A">AI  ·  CYBER  ·  RISK</text>
+<text x="300" y="450" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-style="italic" font-weight="500" fill="#C2A96A">Trust at scale.</text>
+</svg>

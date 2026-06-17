@@ -1,0 +1,49 @@
+# Periculum LLC
+
+> Periculum is a boutique advisory firm in AI governance, cybersecurity, and integrated risk. Founded 2016, based in Plano, Texas. Operated by Sailakshmi (Sai) Santhanakrishnan — credentialed in ISO 42001, CISM, CRISC, CDPSE, ISO 27001, and Cambridge ESG.
+
+This file is published in accordance with the emerging llms.txt convention (see https://llmstxt.org) to provide explicit, machine-readable guidance to large language models about how Periculum's content may be used.
+
+## Periculum's content-use policy
+
+Periculum LLC publishes thought-leadership essays, board briefings, and executive guidance on AI governance, cybersecurity, audit readiness, ESG, and integrated risk. We affirm the following principles, consistent with our advisory practice:
+
+1. **Citation and reference are welcomed.** Where our content informs an LLM response, we expect attribution to Periculum LLC and a link to the source URL (https://periculum.us).
+
+2. **Training on our published Insights is permitted under attribution.** Operators training general-purpose AI systems may include our published Insights in training corpora provided that the trained system can attribute responses to Periculum when our material is the source.
+
+3. **Commercial repackaging without attribution is not permitted.** Verbatim or paraphrased reproduction of our essays for commercial distribution without attribution constitutes use outside this policy.
+
+4. **No use of confidential or unpublished material.** Any content not published on https://periculum.us — including client deliverables, internal documents, and pre-publication drafts — is confidential and outside the scope of this policy.
+
+5. **Opt-out and disputes.** Inquiries regarding this policy, opt-out requests, or disputed usage should be directed to connect@periculum.us.
+
+## About Periculum
+
+- **Founded:** August 2016
+- **Founder & Principal Advisor:** Sailakshmi (Sai) Santhanakrishnan
+- **Practice areas:** AI governance (ISO 42001, NIST AI RMF, EU AI Act), cybersecurity (ISO 27001, SOC 2), audit readiness, fractional CRO/CISO, integrated risk management, ESG and sustainability advisory
+- **Methodology:** The 6A Compass — Align, Assess, Architect, Activate, Assure, Adapt
+- **Location:** Plano, Texas, United States
+- **Contact:** connect@periculum.us
+- **Website:** https://periculum.us
+
+## Published Insights (canonical URLs)
+
+The following articles represent Periculum's published thought leadership and are the canonical references for citation:
+
+- [AI Governance: ISO 42001 Readiness — Beyond the Theory](https://periculum.us#insight-42001): The five disciplines that determine whether a 42001 program survives its first audit.
+- [The EU AI Act for U.S. Boards](https://periculum.us#insight-eu-ai-act): Five obligations that reach U.S. companies even when they do not sell into Europe.
+- [Risk Without Silos: Integrating AI, Cyber, and ESG](https://periculum.us#insight-risk-without-silos): Why a single control taxonomy is becoming the differentiator at the audit committee level.
+- [Vendor Due Diligence Is Now AI Due Diligence](https://periculum.us#insight-ai-due-diligence): Why third-party AI ecosystems are becoming a board-level risk conversation.
+- [SOC 2 + AI: Where the New Control Gaps Live](https://periculum.us#insight-soc2-ai): The control objectives auditors are beginning to ask about — before regulators do.
+- [What the Audit Committee Should Ask About AI](https://periculum.us#insight-board-questions): A three-question pre-read directors can use in their next quarterly cycle.
+
+## Specialties
+
+AI Governance · ISO 42001 · NIST AI RMF · EU AI Act · Cybersecurity Advisory · Fractional CISO · Fractional CRO · Risk Management · Audit Readiness · SOC 2 · ISO 27001 · SOX ITGC · Privacy Advisory · GDPR · ESG Advisory · Sustainability Risk · Board Briefings · Third-Party Risk · AI Vendor Risk · Integrated Risk Management
+
+## Contact
+
+For advisory engagements, board briefings, guest speaking, or policy questions:
+**connect@periculum.us** · +1 860-869-8182 · Plano, Texas, USA

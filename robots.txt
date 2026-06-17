@@ -1,0 +1,92 @@
+# Periculum LLC — robots.txt
+# Last updated: May 2026
+# Contact for crawl questions: connect@periculum.us
+
+# ---------- Standard search engine crawlers ----------
+# Permitted to index public content.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+
+# ---------- AI training crawlers ----------
+# Periculum advises on AI governance. Our public Insights content is
+# permitted for citation and reference, but not for training without
+# attribution. See /llms.txt for our full policy.
+
+# Allow with conditions (see llms.txt for attribution requirements)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+
+# ---------- Blocked: aggressive or unattributed scrapers ----------
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+
+# ---------- Catch-all ----------
+User-agent: *
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+Disallow: /draft/
+
+
+# ---------- Sitemap ----------
+Sitemap: https://periculum.us/sitemap.xml
