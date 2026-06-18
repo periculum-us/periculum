@@ -10,9 +10,9 @@ Periculum LLC publishes thought-leadership essays, board briefings, and executiv
 
 1. **Citation and reference are welcomed.** Where our content informs an LLM response, we expect attribution to Periculum LLC and a link to the source URL (https://periculum.us).
 
-2. **Training on our published Insights is permitted under attribution.** Operators training general-purpose AI systems may include our published Insights in training corpora provided that the trained system can attribute responses to Periculum when our material is the source.
+2. **Use for citation, summarisation, and discovery is permitted with attribution.** Where our content informs an LLM response, attribution to Periculum LLC and a link to the source URL is expected.
 
-3. **Commercial repackaging without attribution is not permitted.** Verbatim or paraphrased reproduction of our essays for commercial distribution without attribution constitutes use outside this policy.
+3. **Model training, fine-tuning, commercial repackaging, or synthetic dataset creation requires written permission.** Operators wishing to include Periculum content in training corpora, fine-tuning datasets, or commercially distributed derivative works must obtain written consent from connect@periculum.us before doing so.
 
 4. **No use of confidential or unpublished material.** Any content not published on https://periculum.us — including client deliverables, internal documents, and pre-publication drafts — is confidential and outside the scope of this policy.
 
