@@ -1260,6 +1260,14 @@
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .newsletter-form button:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .newsletter-form button:not(:disabled):hover {
+    background: #d4bc80;
   }
 
   /* ============== Speaking ============== */
@@ -4129,10 +4137,10 @@
   <section class="newsletter-band">
     <h3>The Periculum Brief</h3>
     <p>Clarity on AI, risk, and governance — so leaders can decide with confidence. Two times per month. No noise.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="your@email.com">
-      <button>Subscribe</button>
-    </div>
+    <form class="newsletter-form" id="newsletter-form" action="https://www.beehiiv.com/subscribe/pub_5727ce3b-0480-46b1-9271-374738e1a1ec" method="GET" target="_blank" novalidate>
+      <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" autocomplete="email">
+      <button type="submit" id="newsletter-btn" disabled>Subscribe</button>
+    </form>
   </section>
 </div>
 
@@ -7974,6 +7982,17 @@
       p.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyFilter(p.getAttribute('data-filter')); }
       });
+    });
+  })();
+
+  // ── Newsletter — enable Subscribe button only when a valid email is entered ──
+  (function () {
+    const input = document.getElementById('newsletter-email');
+    const btn   = document.getElementById('newsletter-btn');
+    if (!input || !btn) return;
+    const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+    input.addEventListener('input', function () {
+      btn.disabled = !valid(this.value);
     });
   })();
 </script>
