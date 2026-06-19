@@ -1102,6 +1102,17 @@
     position: relative;
     overflow: hidden;
     border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .founder-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/sai-portrait.jpg');
+    background-size: cover;
+    background-position: center top;
   }
   /* Gradient overlay removed — the parent's background-color (#3E5C3C / sage)
      serves as the fallback if the image fails to load. Pseudo-element stacking
@@ -4137,10 +4148,11 @@
   <section class="newsletter-band">
     <h3>The Periculum Brief</h3>
     <p>Clarity on AI, risk, and governance — so leaders can decide with confidence. Two times per month. No noise.</p>
-    <form class="newsletter-form" id="newsletter-form" action="https://www.beehiiv.com/subscribe/pub_5727ce3b-0480-46b1-9271-374738e1a1ec" method="GET" target="_blank" novalidate>
-      <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" autocomplete="email">
-      <button type="submit" id="newsletter-btn" disabled>Subscribe</button>
-    </form>
+    <div class="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="your@email.com" autocomplete="email">
+      <button type="button" id="newsletter-btn" disabled>Subscribe</button>
+    </div>
+    <p id="newsletter-success" style="display:none;color:var(--gold);font-size:15px;margin-top:16px;">Opening Beehiiv to confirm your subscription…</p>
   </section>
 </div>
 
@@ -7985,14 +7997,42 @@
     });
   })();
 
-  // ── Newsletter — enable Subscribe button only when a valid email is entered ──
+  // ── Newsletter — enable button on valid email; open Beehiiv on click ─────────
   (function () {
-    const input = document.getElementById('newsletter-email');
-    const btn   = document.getElementById('newsletter-btn');
+    const input   = document.getElementById('newsletter-email');
+    const btn     = document.getElementById('newsletter-btn');
+    const success = document.getElementById('newsletter-success');
     if (!input || !btn) return;
+
+    const BEEHIIV = 'https://www.beehiiv.com/subscribe/pub_5727ce3b-0480-46b1-9271-374738e1a1ec';
     const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
-    input.addEventListener('input', function () {
-      btn.disabled = !valid(this.value);
+
+    // Enable button as user types a valid email
+    ['input', 'change', 'keyup'].forEach(function (ev) {
+      input.addEventListener(ev, function () {
+        btn.disabled = !valid(input.value);
+      });
+    });
+
+    // On Enter key inside input, trigger button
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !btn.disabled) btn.click();
+    });
+
+    // On click, open Beehiiv with email pre-filled
+    btn.addEventListener('click', function () {
+      const email = input.value.trim();
+      if (!valid(email)) return;
+      const url = BEEHIIV + '?email=' + encodeURIComponent(email);
+      const w = window.open(url, '_blank', 'noopener,noreferrer');
+      // Fallback if popup blocked: navigate current tab
+      if (!w || w.closed || typeof w.closed === 'undefined') {
+        window.location.href = url;
+      } else {
+        if (success) success.style.display = 'block';
+        input.value = '';
+        btn.disabled = true;
+      }
     });
   })();
 </script>
