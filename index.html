@@ -7520,15 +7520,10 @@
   let r_state = { idx: 0, answers: {} };
 
   function r_init() {
-    document.getElementById('readiness-intro').style.display = '';
-    document.getElementById('quiz-panel').style.display = 'none';
+    document.getElementById('readiness-intro').style.display = 'none';
     document.getElementById('result-card').style.display = 'none';
     r_state = { idx: 0, answers: {} };
-
-    document.getElementById('start-readiness')?.addEventListener('click', r_start, { once: true });
-    document.getElementById('start-readiness')?.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); r_start(); }
-    }, { once: true });
+    r_start();
   }
 
   function r_start() {
@@ -8023,7 +8018,7 @@
     btn.addEventListener('click', function () {
       const email = input.value.trim();
       if (!valid(email)) return;
-      const url = BEEHIIV + '?email=' + encodeURIComponent(email);
+      const url = BEEHIIV;
       const w = window.open(url, '_blank', 'noopener,noreferrer');
       // Fallback if popup blocked: navigate current tab
       if (!w || w.closed || typeof w.closed === 'undefined') {
