@@ -6829,7 +6829,7 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:40px auto 0;text-align:left;">
 
         <div style="background:white;border:1px solid var(--line);overflow:hidden;" onmouseenter="this.querySelector('img').style.transform='scale(1.04)'" onmouseleave="this.querySelector('img').style.transform='scale(1)'">
-          <img src="/images/sai-conf-4.jpg" alt="ESG & Sustainability Strategy Summit" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
+          <img src="/images/sai-conf-3.jpg" alt="ESG & Sustainability Strategy Summit" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
           <div style="padding:22px 24px;">
             <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;">SUMMIT</div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--green);font-weight:600;line-height:1.3;margin-bottom:8px;">ESG &amp; Sustainability Strategy Summit</div>
@@ -6838,7 +6838,7 @@
         </div>
 
         <div style="background:white;border:1px solid var(--line);overflow:hidden;" onmouseenter="this.querySelector('img').style.transform='scale(1.04)'" onmouseleave="this.querySelector('img').style.transform='scale(1)'">
-          <img src="/images/sai-conf-1.jpg" alt="Women in Technology Forum" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
+          <img src="/images/sai-conf-4.jpg" alt="Women in Technology Forum" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
           <div style="padding:22px 24px;">
             <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;">FORUM</div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--green);font-weight:600;line-height:1.3;margin-bottom:8px;">Women in Technology Forum</div>
@@ -6847,7 +6847,7 @@
         </div>
 
         <div style="background:white;border:1px solid var(--line);overflow:hidden;" onmouseenter="this.querySelector('img').style.transform='scale(1.04)'" onmouseleave="this.querySelector('img').style.transform='scale(1)'">
-          <img src="/images/sai-conf-3.jpg" alt="AFSA Conference" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
+          <img src="/images/sai-conf-1.jpg" alt="AFSA Conference" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.4s ease;transform-origin:center 25%;">
           <div style="padding:22px 24px;">
             <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;">CONFERENCE</div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--green);font-weight:600;line-height:1.3;margin-bottom:8px;">AFSA Conference</div>
@@ -7356,35 +7356,40 @@
       { formId: 'contact-form',            panelId: 'contact-thanks-panel' }
     ];
 
+    const FORM_LABELS = {
+      'contact-form':            { subject: 'Periculum Contact Form', to: 'connect@periculum.us' },
+      'impact-application-form': { subject: 'Periculum Impact Practice Application', to: 'connect@periculum.us' }
+    };
+
+    // Hidden fields to skip in the email body
+    const SKIP_FIELDS = new Set(['bot-field', 'bot-field-impact', 'form-name', 'form-loaded-at']);
+
     PAIRS.forEach(({ formId, panelId }) => {
       const form = document.getElementById(formId);
       const panel = document.getElementById(panelId);
       if (!form || !panel) return;
 
-      form.addEventListener('submit', async (e) => {
+      form.addEventListener('submit', (e) => {
         // Browser-native HTML validation runs first; if it fails, browser blocks.
         if (!form.checkValidity()) return;
         e.preventDefault();
 
-        // Encode form fields for Netlify Forms POST
+        // Build mailto body from form fields
         const formData = new FormData(form);
-        const encoded = new URLSearchParams();
+        const lines = [];
         for (const [k, v] of formData.entries()) {
-          encoded.append(k, typeof v === 'string' ? v : '');
+          if (SKIP_FIELDS.has(k)) continue;
+          if (typeof v !== 'string' || v.trim() === '') continue;
+          const label = k.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          lines.push(label + ': ' + v.trim());
         }
 
-        // POST to Netlify (path is /, with form-name field telling Netlify which form)
-        try {
-          await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encoded.toString()
-          });
-        } catch (err) {
-          // Network error — fall back to default form submit so the user isn't stuck.
-          form.submit();
-          return;
-        }
+        const { subject, to } = FORM_LABELS[formId] || { subject: 'Periculum Enquiry', to: 'connect@periculum.us' };
+        const mailto = 'mailto:' + to
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(lines.join('\n\n'));
+
+        window.location.href = mailto;
 
         // Hide form, show thank-you panel
         form.style.display = 'none';
